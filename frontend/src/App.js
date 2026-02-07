@@ -10,7 +10,7 @@ import YellowService from './services/yellowService';
 import ENSService from './services/ensService';
 import './App.css';
 
-const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:3003';
+const API_BASE_URL = process.env.REACT_APP_API_URL || 'https://orcasignal-v2-0.onrender.com';
 
 // Animated Counter Component
 const AnimatedCounter = ({ value, suffix = '', duration = 1000 }) => {
