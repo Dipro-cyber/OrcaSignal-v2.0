@@ -201,7 +201,7 @@ This project was built for ETHGlobal hackathon. For questions or collaboration:
 
 ## 📜 **License**
 
-MIT License - Built for ETHGlobal hackathon
+MIT License - Built for HackMoney 2026
 
 ---
 
