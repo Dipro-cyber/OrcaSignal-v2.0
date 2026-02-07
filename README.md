@@ -1,4 +1,4 @@
-# OrcaSignal - Privacy-Preserving DeFi Risk Intelligence
+# OrcaSignal v2.0 - Privacy-Preserving DeFi Risk Intelligence
 
 > **🏆 ETHGlobal Submission - Uniswap v4 Privacy DeFi Track**
 
