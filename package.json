@@ -4,7 +4,8 @@
   "description": "OrcaSignal - DeFi Risk Intelligence Platform",
   "main": "index.js",
   "scripts": {
-    "build": "forge build",
+    "build": "cd backend && npm install",
+    "start": "node index.js",
     "test": "forge test",
     "test:verbose": "forge test -vvv",
     "test:gas": "forge test --gas-report",
@@ -26,7 +27,6 @@
     "frontend:build": "cd frontend && npm run build",
     "install:all": "npm install && cd backend && npm install && cd ../frontend && npm install",
     "dev": "concurrently \"npm run backend:dev\" \"npm run frontend\"",
-    "start": "cd backend && npm start",
     "clean": "forge clean",
     "update": "forge update"
   },
