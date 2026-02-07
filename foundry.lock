@@ -1,0 +1,17 @@
+{
+  "../../Downloads/predictor-pro-main/predictor-pro-main/contracts/lib/openzeppelin-contracts": {
+    "rev": "fcbae5394ae8ad52d8e580a3477db99814b9d565"
+  },
+  "../../lib/v4-periphery": {
+    "rev": "9628c36b4f5083d19606e63224e4041fe748edae"
+  },
+  "../LNM/contracts/lib/openzeppelin-contracts": {
+    "rev": "fcbae5394ae8ad52d8e580a3477db99814b9d565"
+  },
+  "lib\\forge-std": {
+    "tag": {
+      "name": "v1.14.0",
+      "rev": "1801b0541f4fda118a10798fd3486bb7051c5dd6"
+    }
+  }
+}
