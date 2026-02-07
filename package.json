@@ -4,7 +4,8 @@
   "description": "OrcaSignal - DeFi Risk Intelligence Platform",
   "main": "index.js",
   "scripts": {
-    "build": "cd backend && npm install",
+    "postinstall": "cd backend && npm install",
+    "build": "echo 'Dependencies installed via postinstall'",
     "start": "node index.js",
     "test": "forge test",
     "test:verbose": "forge test -vvv",
