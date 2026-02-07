@@ -1,4 +1,4 @@
-# OrcaSignal - Privacy-Preserving DeFi Risk Intelligence
+# OrcaSignal v2.0 - Privacy-Preserving DeFi Risk Intelligence
 
 > **🏆 ETHGlobal Submission - Uniswap v4 Privacy DeFi Track**
 
@@ -201,7 +201,7 @@ This project was built for ETHGlobal hackathon. For questions or collaboration:
 
 ## 📜 **License**
 
-MIT License - Built for ETHGlobal hackathon
+MIT License - Built for HackMoney 2026
 
 ---
 
