@@ -1,3 +1,4 @@
 // Render entry point - run backend server
-process.chdir(__dirname + '/backend');
+const path = require('path');
+process.chdir(path.join(__dirname, 'backend'));
 require('./backend/server.js');
