@@ -1,0 +1,48 @@
+{
+  "name": "orcasignal",
+  "version": "1.0.0",
+  "description": "OrcaSignal - DeFi Risk Intelligence Platform",
+  "main": "index.js",
+  "scripts": {
+    "build": "forge build",
+    "test": "forge test",
+    "test:verbose": "forge test -vvv",
+    "test:gas": "forge test --gas-report",
+    "test:fuzz": "forge test --fuzz-runs 10000",
+    "coverage": "forge coverage",
+    "fmt": "forge fmt",
+    "snapshot": "forge snapshot",
+    "anvil": "anvil",
+    "deploy:local": "forge script script/Deploy.s.sol:DeployScript --rpc-url http://localhost:8545 --broadcast",
+    "deploy:sepolia": "forge script script/Deploy.s.sol:DeployScript --rpc-url $ETHEREUM_RPC_URL --broadcast --verify",
+    "deploy:mumbai": "forge script script/Deploy.s.sol:DeployScript --rpc-url $POLYGON_RPC_URL --broadcast --verify",
+    "interact:local": "forge script script/Interact.s.sol:InteractScript --rpc-url http://localhost:8545 --broadcast",
+    "interact:sepolia": "forge script script/Interact.s.sol:InteractScript --rpc-url $ETHEREUM_RPC_URL --broadcast",
+    "verify:sepolia": "forge verify-contract $CONTRACT_ADDRESS src/OrcaSignalRegistry.sol:OrcaSignalRegistry --chain sepolia",
+    "verify:mumbai": "forge verify-contract $CONTRACT_ADDRESS src/OrcaSignalRegistry.sol:OrcaSignalRegistry --chain mumbai",
+    "backend": "cd backend && npm start",
+    "backend:dev": "cd backend && npm run dev",
+    "frontend": "cd frontend && npm start",
+    "frontend:build": "cd frontend && npm run build",
+    "install:all": "npm install && cd backend && npm install && cd ../frontend && npm install",
+    "dev": "concurrently \"npm run backend:dev\" \"npm run frontend\"",
+    "clean": "forge clean",
+    "update": "forge update"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  },
+  "keywords": [
+    "defi",
+    "risk",
+    "ethereum",
+    "solidity",
+    "foundry",
+    "hackathon"
+  ],
+  "author": "OrcaSignal Team",
+  "license": "MIT",
+  "dependencies": {
+    "@uniswap/v4-core": "^1.0.2"
+  }
+}
