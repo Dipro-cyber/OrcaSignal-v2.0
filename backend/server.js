@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const path = require('path');
 require('dotenv').config();
 
 const riskAnalyzer = require('./services/riskAnalyzer');
@@ -12,9 +13,29 @@ const PORT = process.env.PORT || 3001;
 app.use(cors());
 app.use(express.json());
 
+// Serve static files from React build
+const buildPath = path.join(__dirname, '../frontend/build');
+console.log('📁 Serving static files from:', buildPath);
+app.use(express.static(buildPath));
+
 // Health check
 app.get('/health', (req, res) => {
   res.json({ status: 'OK', timestamp: new Date().toISOString() });
+});
+
+// Debug route to check build folder
+app.get('/debug/build', (req, res) => {
+  const fs = require('fs');
+  const buildPath = path.join(__dirname, '../frontend/build');
+  const indexPath = path.join(buildPath, 'index.html');
+  
+  res.json({
+    buildPath,
+    indexPath,
+    buildExists: fs.existsSync(buildPath),
+    indexExists: fs.existsSync(indexPath),
+    buildContents: fs.existsSync(buildPath) ? fs.readdirSync(buildPath) : 'Build folder not found'
+  });
 });
 
 // Get risk analysis for a token
@@ -152,9 +173,11 @@ app.use((error, req, res, next) => {
   });
 });
 
-// 404 handler
-app.use((req, res) => {
-  res.status(404).json({ error: 'Endpoint not found' });
+// Serve React app for all other routes (must be after API routes)
+app.get('*', (req, res) => {
+  const indexPath = path.join(__dirname, '../frontend/build', 'index.html');
+  console.log('📄 Serving index.html from:', indexPath);
+  res.sendFile(indexPath);
 });
 
 app.listen(PORT, () => {
